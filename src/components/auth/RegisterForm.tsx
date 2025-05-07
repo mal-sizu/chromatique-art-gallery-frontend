@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Leaf } from "lucide-react";
+import { Palette } from "lucide-react";
 
 const RegisterForm = () => {
   const [username, setUsername] = useState("");
@@ -49,9 +49,9 @@ const RegisterForm = () => {
       <Card className="w-full max-w-md plant-shadow">
         <CardHeader className="text-center space-y-2">
           <div className="flex justify-center">
-            <Leaf className="h-12 w-12 text-green-600" />
+            <Palette className="h-12 w-12 text-violet-600" />
           </div>
-          <CardTitle className="text-2xl font-bold">Join GreenGrow</CardTitle>
+          <CardTitle className="text-2xl font-bold">Join Chromatique</CardTitle>
           <CardDescription>Create an account to start your gardening journey</CardDescription>
         </CardHeader>
         <CardContent>
@@ -64,7 +64,7 @@ const RegisterForm = () => {
                 placeholder="your_username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="border-green-200 focus-visible:ring-green-500"
+                className="border-violet-200 focus-visible:ring-violet-500"
               />
             </div>
             <div className="space-y-2">
@@ -75,7 +75,7 @@ const RegisterForm = () => {
                 placeholder="your@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border-green-200 focus-visible:ring-green-500"
+                className="border-violet-200 focus-visible:ring-violet-500"
               />
             </div>
             <div className="space-y-2">
@@ -86,7 +86,7 @@ const RegisterForm = () => {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="border-green-200 focus-visible:ring-green-500"
+                className="border-violet-200 focus-visible:ring-violet-500"
               />
             </div>
             <div className="space-y-2">
@@ -97,18 +97,18 @@ const RegisterForm = () => {
                 placeholder="••••••••"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="border-green-200 focus-visible:ring-green-500"
+                className="border-violet-200 focus-visible:ring-violet-500"
               />
             </div>
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
+            <Button type="submit" className="w-full bg-violet-600 hover:bg-violet-700">
               Register
             </Button>
             <div className="text-center text-sm">
               Already have an account?{" "}
               <Button
                 variant="link"
-                className="p-0 text-green-600 hover:text-green-700"
+                className="p-0 text-violet-600 hover:text-violet-700"
                 onClick={() => navigate("/login")}
               >
                 Login

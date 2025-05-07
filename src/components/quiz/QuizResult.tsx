@@ -28,7 +28,7 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
         
         const link = document.createElement("a");
         link.href = imageData;
-        link.download = "GreenGrow-Certificate.png";
+        link.download = "Chromatique Art Gallery-Certificate.png";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -57,7 +57,7 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
         
         const pdf = new jsPDF("p", "mm", "a4");
         pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-        pdf.save("GreenGrow-Certificate.pdf");
+        pdf.save("Chromatique-Art-Gallery-Certificate.pdf");
       } catch (error) {
         console.error("Error generating PDF certificate:", error);
       } finally {
@@ -87,15 +87,15 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
 
   return (
     <div className="space-y-6 max-w-2xl mx-auto p-4">
-      <Card className="plant-shadow border-green-100">
+      <Card className="plant-shadow border-violet-100">
         <CardHeader>
           <CardTitle className="text-center text-xl flex justify-center items-center">
-            <CheckCircle2 className="mr-2 h-6 w-6 text-green-500" />
+            <CheckCircle2 className="mr-2 h-6 w-6 text-violet-500" />
             Quiz Completed!
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center space-y-4">
-          <div className="text-4xl font-bold text-green-600">{Math.round(score)}%</div>
+          <div className="text-4xl font-bold text-violet-600">{Math.round(score)}%</div>
           <p className="text-gray-600">
             {getFeedbackText()}
           </p>
@@ -103,14 +103,14 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
         <CardFooter className="flex flex-wrap gap-2 justify-center">
           <Button 
             variant="outline" 
-            className="border-green-600 text-green-600"
+            className="border-violet-600 text-violet-600"
             onClick={resetQuiz}
           >
             <RefreshCw className="mr-2 h-4 w-4" />
             Try Again
           </Button>
           <Button 
-            className="bg-green-600 hover:bg-green-700"
+            className="bg-violet-600 hover:bg-violet-700"
             onClick={downloadAsPDF}
             disabled={isDownloading}
           >
@@ -119,7 +119,7 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
           </Button>
           <Button 
             variant="outline"
-            className="border-green-600 text-green-600"
+            className="border-violet-600 text-violet-600"
             onClick={downloadAsPNG}
             disabled={isDownloading}
           >
@@ -127,7 +127,7 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
             Download PNG
           </Button>
           <Button 
-            className="bg-green-600 hover:bg-green-700"
+            className="bg-violet-600 hover:bg-violet-700"
             onClick={() => navigate('/')}
           >
             <Home className="mr-2 h-4 w-4" />
@@ -139,36 +139,36 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
       <div className="relative">
         <div 
           ref={certificateRef}
-          className="bg-white border-8 border-double border-green-200 p-8 text-center space-y-4"
+          className="bg-white border-8 border-double border-violet-200 p-8 text-center space-y-4"
           style={{ width: "100%", height: "auto", minHeight: "500px" }}
         >
           <div className="relative">
             {/* Decorative plant corner elements */}
-            <div className="absolute top-0 left-0 text-green-300 opacity-20 text-6xl">🌿</div>
-            <div className="absolute top-0 right-0 text-green-300 opacity-20 text-6xl">🌿</div>
-            <div className="absolute bottom-0 left-0 text-green-300 opacity-20 text-6xl">🌿</div>
-            <div className="absolute bottom-0 right-0 text-green-300 opacity-20 text-6xl">🌿</div>
+            <div className="absolute top-0 left-0 text-violet-300 opacity-20 text-6xl">🌿</div>
+            <div className="absolute top-0 right-0 text-violet-300 opacity-20 text-6xl">🌿</div>
+            <div className="absolute bottom-0 left-0 text-violet-300 opacity-20 text-6xl">🌿</div>
+            <div className="absolute bottom-0 right-0 text-violet-300 opacity-20 text-6xl">🌿</div>
             
             {/* Certificate content */}
-            <div className="text-green-600 text-2xl font-serif font-bold mb-2">Certificate of Achievement</div>
-            <div className="text-lg">Green Grow Plantation Learning Platform</div>
+            <div className="text-violet-600 text-2xl font-serif font-bold mb-2">Certificate of Achievement</div>
+            <div className="text-lg">Chromatique Art Gallery Plantation Learning Platform</div>
             
-            <div className="py-6 border-t border-b border-green-100 my-4">
-              <div className="text-3xl font-bold text-green-700 py-2">Plantation Knowledge</div>
+            <div className="py-6 border-t border-b border-violet-100 my-4">
+              <div className="text-3xl font-bold text-violet-700 py-2">Plantation Knowledge</div>
               <p className="text-gray-600">This certificate is awarded to</p>
-              <p className="text-2xl font-bold py-2">Green Grow Member</p>
+              <p className="text-2xl font-bold py-2">Chromatique Art Gallery Member</p>
               <p className="text-gray-600">
                 For successfully completing the Plantation Knowledge Quiz
                 <br />with a score of
               </p>
-              <p className="text-4xl font-bold text-green-600 py-2">{Math.round(score)}%</p>
+              <p className="text-4xl font-bold text-violet-600 py-2">{Math.round(score)}%</p>
             </div>
             
             <div className="pt-4 text-sm text-gray-500">
               <p>Issued on: {formatDate()}</p>
               <div className="pt-4 mt-4">
-                <div className="mx-auto w-36 border-t border-green-300"></div>
-                <p className="pt-2">GreenGrow Plantation Learning Platform</p>
+                <div className="mx-auto w-36 border-t border-violet-300"></div>
+                <p className="pt-2">Chromatique Art Gallery Plantation Learning Platform</p>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ const QuizResult = ({ score, resetQuiz }: QuizResultProps) => {
       {isDownloading && (
         <div className="text-center text-sm text-gray-500">
           <div className="flex justify-center items-center">
-            <div className="animate-spin rounded-full h-5 w-5 border-2 border-green-600 border-t-transparent mr-2"></div>
+            <div className="animate-spin rounded-full h-5 w-5 border-2 border-violet-600 border-t-transparent mr-2"></div>
             Generating your certificate...
           </div>
         </div>

@@ -1,23 +1,22 @@
-
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useNavigate } from "react-router-dom";
-import { Leaf } from "lucide-react";
+import { Palette } from "lucide-react";
 
 const Navbar = () => {
   const { isAuthenticated, currentUser, logout } = useAuth();
   const navigate = useNavigate();
-
+ 
   return (
-    <nav className="bg-gradient-to-r from-green-700 to-green-600 text-white shadow-md">
+    <nav className="bg-gradient-to-r from-violet-700 to-violet-600 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <Leaf className="h-8 w-8 mr-2" />
-              <span className="text-xl font-bold">GreenGrow</span>
+              <Palette className="h-8 w-8 mr-2" />
+              <span className="text-xl font-bold">Chromatique Art Gallery</span>
             </Link>
           </div>
 
@@ -32,7 +31,7 @@ const Navbar = () => {
                 </Link>
                 <Button 
                   variant="ghost" 
-                  className="text-white hover:text-white hover:bg-green-800"
+                  className="text-white hover:text-white hover:bg-violet-800"
                   onClick={() => {
                     logout();
                     navigate("/login");
@@ -45,13 +44,13 @@ const Navbar = () => {
               <div className="flex items-center space-x-2">
                 <Button 
                   variant="ghost" 
-                  className="text-white hover:text-white hover:bg-green-800"
+                  className="text-white hover:text-white hover:bg-violet-800"
                   onClick={() => navigate("/login")}
                 >
                   Login
                 </Button>
                 <Button 
-                  className="bg-green-800 hover:bg-green-900 text-white"
+                  className="bg-violet-800 hover:bg-violet-900 text-white"
                   onClick={() => navigate("/register")}
                 >
                   Sign Up

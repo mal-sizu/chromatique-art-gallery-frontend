@@ -61,7 +61,7 @@ const ProfileTabs = ({ userId }: ProfileTabsProps) => {
 
       <TabsContent value="posts">
         {userPosts.length === 0 ? (
-          <div className="text-center text-gray-500 py-8">No posts yet.</div>
+          <div className="text-center text-violet-500 py-8">No posts yet.</div>
         ) : (
           userPosts.map(post => (
             <PostCard
@@ -76,7 +76,7 @@ const ProfileTabs = ({ userId }: ProfileTabsProps) => {
 
       <TabsContent value="polls">
         {userPolls.length === 0 ? (
-          <div className="text-center text-gray-500 py-8">No polls yet.</div>
+          <div className="text-center text-violet-500 py-8">No polls yet.</div>
         ) : (
           userPolls.map(poll => (
             <PollCard
@@ -91,7 +91,7 @@ const ProfileTabs = ({ userId }: ProfileTabsProps) => {
 
       <TabsContent value="materials">
         {userMaterials.length === 0 ? (
-          <div className="text-center text-gray-500 py-8">No learning materials yet.</div>
+          <div className="text-center text-violet-500 py-8">No learning materials yet.</div>
         ) : (
           userMaterials.map(material => (
             <MaterialCard

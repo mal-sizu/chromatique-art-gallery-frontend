@@ -311,8 +311,8 @@ const PollCard = ({ poll, onDelete, onEdit }: PollCardProps) => {
   };
 
   return (
-    <Card className="mb-6 border-green-100 plant-shadow">
-      <div className="flex items-center justify-between p-4 border-b border-green-100">
+    <Card className="mb-6 border-violet-100 plant-shadow">
+      <div className="flex items-center justify-between p-4 border-b border-violet-100">
         <div className="flex items-center gap-3">
           <Avatar>
             <AvatarImage src={localPoll.userProfileImage} alt={localPoll.username} />
@@ -391,14 +391,14 @@ const PollCard = ({ poll, onDelete, onEdit }: PollCardProps) => {
                 return (
                   <div key={option.id} className="relative">
                     {isSelected ? (
-                      <div className={`border rounded-lg p-3 space-y-1 ${isPending ? 'border-yellow-300 bg-yellow-50' : 'border-green-300 bg-green-50'}`}>
+                      <div className={`border rounded-lg p-3 space-y-1 ${isPending ? 'border-yellow-300 bg-yellow-50' : 'border-violet-300 bg-violet-50'}`}>
                         <div className="flex justify-between mb-1">
                           <span>{option.text} {isPending && <span className="text-xs text-yellow-600">(pending...)</span>}</span>
                           <span className="font-medium">{percentage}%</span>
                         </div>
                         <Progress 
                           value={percentage} 
-                          className={`h-2 ${isPending ? 'bg-yellow-100' : 'bg-green-100'}`}
+                          className={`h-2 ${isPending ? 'bg-yellow-100' : 'bg-violet-100'}`}
                         />
                         <div className="text-xs text-gray-500 text-right mt-1">
                           {option.votes.length} {option.votes.length === 1 ? 'vote' : 'votes'}
@@ -407,7 +407,7 @@ const PollCard = ({ poll, onDelete, onEdit }: PollCardProps) => {
                     ) : (
                       <Button
                         variant="outline"
-                        className="w-full justify-start font-normal hover:bg-green-50 hover:text-green-700 hover:border-green-300"
+                        className="w-full justify-start font-normal hover:bg-violet-50 hover:text-violet-700 hover:border-violet-300"
                         onClick={() => handleVote(option.id)}
                         disabled={!currentUser || isVoting}
                       >
@@ -472,7 +472,7 @@ const PollCard = ({ poll, onDelete, onEdit }: PollCardProps) => {
               <Button 
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-green-600 hover:bg-green-700 text-white"
+                className="bg-violet-600 hover:bg-violet-700 text-white"
               >
                 {isSubmitting ? 'Saving...' : 'Save Changes'}
                 {!isSubmitting && <Save className="ml-2 h-4 w-4" />}
